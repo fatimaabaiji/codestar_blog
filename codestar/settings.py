@@ -32,6 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '.herokuapp.com',
     '127.0.0.1',
+    'codestar-frs-628e39db59d7.herokuapp.com',
 ]
 
 
