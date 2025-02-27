@@ -20,3 +20,14 @@ class Post(models.Model):
     updated_on = models.DateTimeField(blank=True)
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)  # Automatically set the field to now when the object is first created
+
+    def __str__(self):
+        return f'{self.author} on {self.post}: {self.body}'
+
+
