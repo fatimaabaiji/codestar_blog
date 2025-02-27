@@ -17,11 +17,9 @@ Including another URLconf
 # codestar/urls.py (or the main URL configuration file)
 
 from django.contrib import admin
-from django.urls import path
-from blog.views import hello_blog, home  # Import the new view function
+from django.urls import path, include  # Import the include function
 
 urlpatterns = [
-    path('', home, name='home'),  # Add the new URL pattern for the root URL
-    path('blog/', hello_blog, name='blog'), 
     path('admin/', admin.site.urls),
+    path('', include('blog.urls')),  # Include the blog's URL configuration at the root level
 ]
