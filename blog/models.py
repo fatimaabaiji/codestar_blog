@@ -43,11 +43,11 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.author}"
 
 class Event(models.Model):
-    name = models.CharField(max_length=200)
-    date = models.DateTimeField()
+    title = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     description = models.TextField()
+    date = models.DateTimeField()
 
     def __str__(self):
-        return self.name
+        return self.title
 
