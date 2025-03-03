@@ -22,6 +22,6 @@ from django.urls import path, include  # Import the include function
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('about/', include('about.urls')), # Include the about's URL configuration
+     path("about/", include("about.urls"), name="about-urls"), # Include the about's URL configuration
     path('', include('blog.urls')),  # Include the blog's URL configuration at the root level
 ]
