@@ -52,6 +52,9 @@
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
             {% endif %}
+            <li>
+                <a href="{% url 'event_detail' event.event_id %}" class="page-link">Event Details</a>
+            </li>
         </ul>
     </nav>
     {% endif %}
