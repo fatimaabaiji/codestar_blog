@@ -48,6 +48,8 @@ class Event(models.Model):
     description = models.TextField()
     date = models.DateTimeField()
 
+     
+
     def __str__(self):
         return self.title
 
