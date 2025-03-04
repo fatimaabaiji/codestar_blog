@@ -42,11 +42,15 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
 
+
 class Event(models.Model):
-    title = models.CharField(max_length=200)
-    location = models.CharField(max_length=200)
     description = models.TextField()
     date = models.DateTimeField()
+    location = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = 'blog_event'
+
 
      
 

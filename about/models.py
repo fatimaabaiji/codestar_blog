@@ -18,4 +18,16 @@ class AboutEvent(models.Model):
 
     def __str__(self):
         return self.description
+    
+class Event(models.Model):
+    description = models.TextField()
+    date = models.DateTimeField()
+    location = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = 'blog_event'
+
+    def __str__(self):
+        return self.title
+
 
